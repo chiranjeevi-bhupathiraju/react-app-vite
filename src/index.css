@@ -19,6 +19,9 @@
 body {
   margin: 0;
   min-width: 320px;
+  background: #fafbf8;
+  color: #17251d;
+  transition: background-color 0.2s, color 0.2s;
 }
 button,
 input,
@@ -144,4 +147,67 @@ button {
 }
 .field-label textarea {
   min-height: 90px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  color: #e6eee8;
+  background: #111a15;
+}
+:root[data-theme="dark"] body {
+  background: #111a15;
+  color: #e6eee8;
+}
+:root[data-theme="dark"] .product-image {
+  mix-blend-mode: normal;
+}
+:root[data-theme="dark"] [class*="bg-white"],
+:root[data-theme="dark"] [class*="bg-gray-50"],
+:root[data-theme="dark"] [class*="bg-gray-100"],
+:root[data-theme="dark"] [class*="bg-[#f5f7f3]"],
+:root[data-theme="dark"] [class*="bg-[#f8faf6]"],
+:root[data-theme="dark"] [class*="bg-[#edf7ef]"],
+:root[data-theme="dark"] [class*="bg-[#f0f7ec]"],
+:root[data-theme="dark"] .panel,
+:root[data-theme="dark"] .filter {
+  background-color: #1b2820 !important;
+}
+:root[data-theme="dark"] [class*="text-gray-800"],
+:root[data-theme="dark"] [class*="text-gray-700"],
+:root[data-theme="dark"] [class*="text-gray-600"],
+:root[data-theme="dark"] [class*="text-[#34714b]"] {
+  color: #bdcbbf !important;
+}
+:root[data-theme="dark"] [class*="text-gray-500"],
+:root[data-theme="dark"] [class*="text-gray-400"] {
+  color: #9aaa9d !important;
+}
+:root[data-theme="dark"] [class*="border-[#edf0eb]"],
+:root[data-theme="dark"] [class*="border-gray-100"],
+:root[data-theme="dark"] [class*="border-gray-200"],
+:root[data-theme="dark"] [class*="border-[#e5e9e3]"],
+:root[data-theme="dark"] [class*="border-[#e1e6df]"],
+:root[data-theme="dark"] .panel,
+:root[data-theme="dark"] .filter {
+  border-color: #304036 !important;
+}
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] select {
+  color: #e6eee8;
+  background-color: #1b2820;
+  border-color: #304036;
+}
+:root[data-theme="dark"] input::placeholder,
+:root[data-theme="dark"] textarea::placeholder {
+  color: #849488;
+}
+:root[data-theme="dark"] [class*="bg-[#eaf6ed]"] {
+  background-color: #20382a !important;
+}
+:root[data-theme="dark"] [class*="text-[#168a55]"] {
+  color: #65c98f !important;
+}
+:root[data-theme="dark"] [class*="bg-[#123d2b]"] {
+  background-color: #0b2418 !important;
 }
