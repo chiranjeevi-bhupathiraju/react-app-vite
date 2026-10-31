@@ -12,6 +12,8 @@ import {
   ArrowRight,
   RefreshCw,
   User,
+  Sun,
+  Moon,
 } from "lucide-react";
 import toast from "react-hot-toast";
 import { useStore } from "../context/StoreContext";
@@ -31,8 +33,13 @@ export const cats = [
 export function Header() {
   const s = useStore(),
     [q, setQ] = useState(""),
-    [open, setOpen] = useState(false);
+    [open, setOpen] = useState(false),
+    [theme, setTheme] = useState(() => localStorage.getItem("freshcart-theme") || "light");
   const nav = useNavigate();
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("freshcart-theme", theme);
+  }, [theme]);
   return (
     <>
       <div className="bg-[#edf7ef] text-[#34714b] text-xs py-2">
@@ -83,6 +90,14 @@ export function Header() {
             <button className="text-xs font-bold text-[#168a55]">Search</button>
           </form>
           <div className="flex items-center gap-2 sm:gap-4">
+            <button
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              className="p-2 rounded-full hover:bg-gray-100"
+              aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+              title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+            >
+              {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
             <Link to="/wishlist" className="relative p-2" aria-label="Wishlist">
               <Heart size={21} />
               {s.wishlist.length > 0 && (
